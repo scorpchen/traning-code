@@ -1,0 +1,21 @@
+
+error notes:
+while(putchar(getchar()) != EOF);       // 此语句无法结束循环
+                                        // 因为在这个系统中，char为unsigned型（有些系统不是）
+                                        // getchar（）得到EOF后返回EOF，putchar（）输出EOF，
+                                        // 但是返回了255（-1的补码），而没有返回EOF。
+关于标准IO的返回值：
+0.printf()、scanf()、getchar()、putchar()的返回值都为 int类型，这个要注意
+1.printf()的返回值是打印字符的个数，且打印字符串的时候不会加上空字符’\0’
+2.scanf()返回值返回的是成功读取的项数
+3.getchar()的返回值是用户输入的第一个字符的ASCII码
+4.putchar()的返回值返回的是原字符，但如果输入一连串字符，则只会返回第一个字符
+5.printf()、scanf()、getchar()、putchar()这四个函数如果遇到错误或者检测到文件结尾（在不同的系统下会有所不同），都会返回EOF
+
+
+
+
+erro notes:
+while((ch = getchar()) != EOF)          // 当控制台输入一行数据以^Z结尾时，结尾的^Z不被识别。
+                                        // 当换行以后输入^Z则被识别
+EOF作为我向终端说明，我操作完成的标识符，getchar（）是不识别的，getchar（）识别^Z的情况是： ^Z在换行符之后， 即我数据输入完成。
