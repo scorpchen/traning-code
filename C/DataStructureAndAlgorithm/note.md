@@ -4,6 +4,7 @@
 # 线性表
 
 ##　数据对象集：n个元素构成的有序序列
+
 ##　操作集：
 List MakeEmpty()：初始化一个空线性表L；
 ElementType FindKth(int K, List L): 根据位序K，返回相应元素；
@@ -11,6 +12,7 @@ int Find(ElementType X, List L)：在线性表L中查找X的第一次出现位�
 void Insert（ElementType X, int i, List L)：在位序i前插入新元素X；
 void Delete(int i, List L): 删除指定位序i处的元素
 int Length(List L)：返回线性表的长度
+
 ## 顺序存储实现：
 利用数组的连续存储空间顺序存放线性表元素
 ```
@@ -337,5 +339,76 @@ ElementType Pop(stack S)
 ### 队列：具有一定操作约束的线性表
 一端插入，另一端删除
 操作集：
-1. Queue CreatQueue(int Maxsize): 生成长度为MaxSize的空队列；
-2. int IsfullQ
+1. Queue CreatQueue( int Maxsize ): 生成长度为MaxSize的空队列；
+2. int IsfullQ( Queue Q, int MaxSize ); 判断队列Q是否已满
+3. void AddQ( Queue Q, ElementType item ); 插入元素
+4. int IsEmptyQ( Queue Q ); 判断队列是否为空
+5. ElementType DeleteQ( Queue Q ); 读取并删除头元素
+
+```
+// 队列的顺序存储实现
+#define MaxSize
+struct QNode{
+    ElementType Data[MaxSize];
+    int rear;
+    int front;
+};
+typedef struct QNode *Queue;
+
+// 入队列
+void AddQ(Queue PtrQ, ElementType item)
+{
+    if((PtrQ->rear+1)%MaxSize == PtrQ->front){
+        printf("队列满");
+        return;
+    }
+    PtrQ->rear = (PtrQ->rear+1)%MaxSize;
+    PtrQ->Data[PtrQ->rear] = item;
+}
+
+// 出队列
+ElementType DeleteQ(Queue PtrQ)
+{
+    if(PtrQ->front == PtrQ->rear){
+        printf("队列空");
+        return ERROR;
+    }
+    else{
+        PtrQ->front = (PtrQ->front+1)%MaxSize;
+        return PtrQ->Data[PtrQ->front];
+    }
+}
+
+// 队列的链式存储实现
+struct Node{
+    ElementType Data;
+    struct Node *Next;
+};
+struct QNode{
+    struct Node *rear;
+    struct Node *front;
+};
+typedef struct QNode *Queue;
+Queue PtrQ;
+
+// 出队
+ElementType DeleteQ(Queue PtrQ)
+{
+    struct Node *FrontCell;
+    ElementType FrontElem;
+
+    if (PtrQ->front == NULL){
+        printf("队列空"); return ERROR;
+    }
+    FrontCell = PtrQ->front;
+    if(PtrQ->front == PtrQ->rear) // 若队列只有一个元素
+        PtrQ->front = PtrQ->rear = NULL; // 删除后队列置为空
+    else
+        PtrQ->front = PtrQ->front->Next;
+    FrontElem = FrontCell->Data;
+    free(FrontCell);
+    return FrontElem;
+}
+
+
+```
