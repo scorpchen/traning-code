@@ -1,12 +1,11 @@
 
 抽象数据类型：数据对象集、操作集
 
-
 # 线性表
 
-## 数据对象集：n个元素构成的有序序列
+##　数据对象集：n个元素构成的有序序列
 
-## 操作集：
+##　操作集：
 List MakeEmpty()：初始化一个空线性表L；
 ElementType FindKth(int K, List L): 根据位序K，返回相应元素；
 int Find(ElementType X, List L)：在线性表L中查找X的第一次出现位置；
