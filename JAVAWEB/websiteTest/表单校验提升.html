@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <title>注册页面</title>
+        <script>
+            function showTips(id, info){
+                document.getElementById(id + "span").innerHTML="<font color='gray'>" + info +"</font>";
+            }
+            function checkUser(id, info){
+                var uValue = document.getElementById(id).value;
+                if ( uValue == "" ){
+                    document.getElementById(id + "span").innerHTML="<font color='red'>"+ info + "</font>";
+                }
+                else{
+                    document.getElementById(id + "span").innerHTML="";
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <table border="1px" align="center" width="1300px" cellpadding="0px" cellspacing="0px">
+            <!--logo-->
+            <tr>
+                <td>
+                    <!--嵌套一个一行三列的表格-->
+                    <table border="1px" width="100%">
+                        <tr height="50px">
+                            <td width="33.3%">
+                                <img src="">
+                            </td>
+                            <td width="33.3%">
+                                <img src="">
+                            </td>
+                            <td width="33.3%">
+                                <a href="#">登录</a>
+                                <a href="#">注册</a>
+                                <a href="#">购物车</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!--导航栏-->
+            <tr height="50px">
+                <td bgcolor="black">
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="#">
+                        <font size="5" color="white">首页</font>
+                    </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="#">
+                        <font size="5" color="white">手机数码</font>
+                    </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="#">
+                        <font size="5" color="white">电脑办公</font>
+                    </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="#">
+                        <font size="5" color="white">鞋靴箱包</font>
+                    </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="#">
+                        <font size="5" color="white">家用电器</font>
+                    </a>
+                </td>
+            </tr>
+            <!--注册表单-->
+            <tr>
+                <td height="600px" background="">
+                    <!--嵌套表格-->
+                    <form action="#" method="GET" neme="regForm" onsubmit="return checkForm()">
+                        <table border="1px" width="750px" height="400" align="center" cellpadding="0px" cellspaciing="0px">
+                            <tr height="40">
+                                <td colspan="2">
+                                    <font size="4">会员注册</font> &nbsp;&nbsp;&nbsp;&nbsp;USER REGISTER
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    用户名
+                                </td>
+                                <td>
+                                    <font color="red">*</font><input type="text" name="user" size="34" id="user" onfocus="showTips('user', '用户名必填')" onblur="checkUser('user', '用户名必须输入')"/><span id="userspan"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    密码
+                                </td>
+                                <td>
+                                    <input type="password" name="passwd" size="34" id="passwd" onfocus="showTips('passwd', '密码必填')" onblur="checkUser('passwd', '密码必须输入')"/><span id="passwdspan"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    确认密码
+                                </td>
+                                <td>
+                                    <input type="password" name="repasswd" size="34" id="repasswd" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    Email
+                                </td>
+                                <td>
+                                    <input type="text" name="Email" size="34" id="email"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    姓名
+                                </td>
+                                <td>
+                                    <input type="text" name="name" size="34"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    性别
+                                </td>
+                                <td>
+                                    <input type="radio" name="sex" value="male"/>男
+                                    <input type="radio" name="sex" value="female"/>女
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    出生日期
+                                </td>
+                                <td>
+                                    <input type="text" name="birthday" size="34"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    验证码
+                                </td>
+                                <td>
+                                    <input type="text" name="yanzhengma" size="34"/>
+                                    <img src="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center">
+                                    <input type="submit" name="register" value="注册"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>>
+                </td>
+            </tr>
+            <!--广告图片-->
+            <tr>
+                <td>
+                    <img src="">
+                </td>
+            </tr>
+            <!--友情链接和版权信息-->
+            <tr>
+                <td align="center">
+                    <a href="#">关于我们</a>
+                    <a href="#">联系我们</a>
+                    <a href="#">招贤纳士</a>
+                    <a href="#">法律申明</a>
+                    <a href="#">友情链接</a>
+                    <a href="#">支付方式</a>
+                    <a href="#">配送方式</a>
+                    <a href="#">服务声明</a>
+                    <a href="#">广告声明</a>
+                    <p>
+                        Copyright © 2020 scorp 版权所有
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </body>
+
+
+</html>

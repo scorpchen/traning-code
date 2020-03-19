@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>弹出广告</title>
+        <script type="text/javascript" src="duang_ad.js"></script>
+        <!--
+            <script>
+            function init(){
+                id = setInterval("showAd()", 3000);
+            }
+            function showAd(){
+                var adEle = document.getElementById("img");
+                adEle.style.display = "block";
+                clearInterval(id);
+                id = setInterval("hiddenAd()", 3000);
+            }
+            function hiddenAd(){
+                document.getElementById("img").style.display = "none";
+                clearInterval(id);
+            }
+        </script>
+        -->
+    </head>
+    <body onload="init()">
+        <div id="ad" align="center" >
+            <!-- 定时弹出广告 -->
+            <img src="./pictures/img1.jpg" width="70%" style="display: none" id="img"/> 
+            <br/>
+            <img src="./pictures/img3.jpg" width="70%" /> 
+        </div>
+    </body>
+</html>

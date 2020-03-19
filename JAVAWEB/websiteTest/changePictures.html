@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>切换图片</title>
+        <style>
+            div{
+                border: 1px solid white;
+                width: 500px;
+                height: 350px;
+                margin: auto;
+                text-align: center;
+            }
+        </style>
+        <script>
+            function init(){
+                setInterval("changeImg()", 300);
+            }
+            var i = 1;
+            function changeImg(){
+                ++i;
+                document.getElementById("img").src="./pictures/img" + i + ".jpg";
+                if ( i == 5 ) i = 1;
+            }
+        </script>
+    </head>
+
+    <!-- 加载事件 -->
+    <body onload="init()">
+        <div>
+            <input type="button" value="next"/>
+            <img src="./pictures/img1.jpg" width="100%" id="img" />
+        </div>
+    </body>
+</html>

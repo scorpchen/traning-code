@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>全选</title>
+        <script>
+            function checkAll(){
+                var chEle = document.getElementById("checkAll");
+                if(chEle.checked == true){
+                    var checkOnes = document.getElementsByName("checkOne");
+                    for(var i = 0; i < checkOnes.length; i++ ){
+                        checkOnes[i].checked = true;
+                    }
+                }
+                else{
+                    var checkOnes = document.getElementsByName("checkOne");
+                    for(var i = 0; i < checkOnes.length; i++ ){
+                        checkOnes[i].checked = false;
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="ad" align="center" >
+           <table>
+            <tr>
+                <td>
+                    <input id="checkAll" type="checkbox" onclick="checkAll()"/>
+                </td>
+                <td>全选</td>
+            </tr>
+               <tr>
+                   <td>
+                       <input type="checkbox" name="checkOne"/>
+                   </td>
+                   <td>1</td>
+               </tr>
+               <tr>
+                <td>
+                    <input type="checkbox" name="checkOne"/>
+                </td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="checkOne"/>
+                </td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="checkOne"/>
+                </td>
+                <td>4</td>
+            </tr>
+           </table>
+        </div>
+    </body>
+</html>
